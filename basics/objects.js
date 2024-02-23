@@ -1,4 +1,4 @@
-//object literals
+//object literals or non-singleton object
 const mySym = Symbol("key1") //defining a symbol
 const newUser = {
     name: "ankur",
@@ -8,7 +8,7 @@ const newUser = {
     email: "ankur.g@gmail.com",
     isLoggedIn: false,
     lastLoginDays: ["Friday", "Saturday"]
-}
+} //objects defined within curly braces {} are called object literals or non-sngleton object
 console.log('----------------------------------------')
 console.log(newUser['email']);
 console.log('----------------------------------------')
@@ -40,7 +40,7 @@ anotherObject.greeting = function(){
 }
 
 anotherObject.greeting2 = function() {
-    console.log(`Hello user ${this.name}`);
+    console.log(`Hello user ${this.name}`);//this here refers to the current object that has invoked this function
 }
 
 console.log(anotherObject.greeting());
