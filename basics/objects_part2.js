@@ -71,3 +71,14 @@ console.log('-------------------------------------------------');
 
 //check wheteher an object has a key or not. Returns true if found else false if not found
 console.log(newUser.hasOwnProperty('age'));
+
+console.log('-------------------------------------------------');
+//object destructuring
+
+const medicineInfo = {
+    medName: "Sompraz D 40",
+    batch_id: "MED000SOM001"
+}
+
+const {medName: Medicine} = medicineInfo
+console.log(Medicine);
