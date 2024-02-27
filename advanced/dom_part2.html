@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+    </div>
+</body>
+<script>
+    const myclass = document.querySelector('.parent')
+    //every element has their children
+    console.log(myclass);
+    console.log(myclass.children);
+    console.log(myclass.children[1].innerHTML);
+
+    //iterate over the HTML collection using for loop
+    for (let i = 0; i < myclass.children.length; i++) {
+        console.log(myclass.children[i].innerHTML);       
+    }
+    //change the colour of the second HTML collection element
+    myclass.children[1].style.color = 'orange'
+
+    console.log(myclass.firstElementChild);
+    console.log(myclass.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    console.log(dayOne.parentElement); //accessing the parent element
+    console.log(dayOne.nextElementSibling);
+    
+    //Node list is the tree structure maintained by the browser behind the scene 
+    console.log("NODES :", myclass.childNodes)
+    
+    
+</script>
+</html>

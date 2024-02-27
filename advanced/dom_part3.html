@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    //div.innerText = "DOM manipulation" //it calles the innerText element and then writes the text
+    const addText = document.createTextNode("DOM Manipulation") //creates custom text node as above
+    div.appendChild(addText) //adding the custom text to the div element
+
+    document.body.appendChild(div) //adding the div element to the body of the html file
+</script>
+</html>
