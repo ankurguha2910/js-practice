@@ -3,11 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 id="title" class="heading">Learning DOM</h1>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">Learning DOM <span style="display: none;">test text</span></h1>
         <p>Lorem ipsum</p>
+        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut itaque quod perspiciatis sit consequatur facilis rerum magnam nobis blanditiis iste, temporibus, molestias error quaerat officia illum similique harum cupiditate earum?</h2>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquid hic exercitationem atque. Dolore facere voluptatibus praesentium velit quia non dignissimos perferendis delectus consequuntur sed nesciunt, eaque rem in minima!</h3>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+        </ul>
     </div>
 </body>
 </html>
+
+<!--
+Various DOM manipulation techniques:
+
+1. document.getElementById('title')
+<h1 id=​"title" class=​"heading">​Learning DOM​</h1>​
+
+2. document.getElementById('title').id
+'title'
+
+3. document.getElementById('title').className
+'heading'
+
+4. document.getElementById('title').getAttribute()
+VM399:1 Uncaught TypeError: Failed to execute 'getAttribute' on 'Element': 1 argument required, but only 0 present.
+    at <anonymous>:1:34
+(anonymous) @ VM399:1
+
+5. document.getElementById('title').getAttribute('id')
+'title'
+
+6. document.getElementById('title').getAttribute('class')
+'heading'
+
+7. document.getElementById('title').setAttribute('class', 'test') // existing class if any is overwritten
+undefined 
+
+8. document.getElementById('title').setAttribute('class', 'test heading')
+undefined
+
+9. document.getElementById('title')
+<h1 id=​"title" class=​"test heading">​Learning DOM​</h1>​
+
+10. const title = document.getElementById('title')
+undefined
+
+11. title
+<h1 id=​"title" class=​"test heading">​Learning DOM​</h1>​
+
+12. title.style.backgroundColor = 'green'
+'green'
+
+13. title.style.padding = "15px"
+'15px'
+
+14. title.style.borderRadius = "15px"
+'15px'
+
+15. title.innerText //only returns the portion that is visible and not hidden by any css style property but does not support HTML tags
+'Learning DOM'
+
+16. title.textContent //returns the whole text irrespective of any style css but does not support HTML tags
+'Learning DOM test text'
+
+17. title.innerHTML //returns the HTML content if present along with the complete text
+'Learning DOM <span style="display: none;">test text</span>'
+
+18. document.querySelector('h1') //returns the first <h1> tag element
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+19. document.querySelector('h2') //returns the first <h2> tag element
+<h2>​…​</h2>​"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut itaque quod perspiciatis sit consequatur facilis rerum magnam nobis blanditiis iste, temporibus, molestias error quaerat officia illum similique harum cupiditate earum?"</h2>​
+
+20. document.querySelector('#title') //returns the element with id = title
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+21. document.querySelector('.heading') //returns the element with className = heading
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+22. document.querySelector('input[type="password"]') //returns the input field of type password
+<input type=​"password" name id>​
+
+23. document.querySelector('ul') //selecting an <ul> element
+<ul>​…​</ul>​<li>​…​</li>​<li>​…​</li>​<li>​…​</li>​</ul>​
+
+const myul = document.querySelector('ul')
+undefined
+
+24. myul.querySelector('li')
+<li>​…​</li>​
+
+25. const changecolour = myul.querySelector('li')
+undefined
+
+26. changecolour.style.backgroundColor = "Green"
+'Green'
+
+27. changecolour.style.padding = "15px"
+'15px'
+
+28. const myli = document.querySelectorAll('li')
+undefined
+
+29. myli[0].style.color = 'green'
+'green'
+
+30. const myh1 = document.querySelectorAll('h1')
+undefined
+
+31. myh1
+NodeList [h1#title.heading]
+
+32. myh1[0].style.color = 'green'
+'green'
+
+//changing all the li element background color to green
+//NodeList itemscan be iterated using foreach()
+33. myli.forEach( (l) => (
+    l.style.backgroundColor = 'green'
+))
+
+
+34. document.getElementsByClassName('list-item')
+HTMLCollection(3) [li.list-item, li.list-item, li.list-item]
+
+35. const myli = document.getElementsByClassName('list-item')
+undefined
+
+//convert the HTMLCollection to array since HTMLCollection cannot be iterated
+36. const myConvertedArray = Array.from(myli)
+
+//iterate over the converted array and change the forefround colour to orange
+37. myConvertedArray.forEach((li) => (
+    li.style.color = 'orange'
+))
+-->
