@@ -26,5 +26,22 @@
     div.appendChild(addText) //adding the custom text to the div element
 
     document.body.appendChild(div) //adding the div element to the body of the html file
+
+    const h1 = document.createElement('h1')
+    const newText = document.createTextNode("Another DOM heading")
+    h1.appendChild(newText)
+    h1.style.color = "orange"
+
+    document.body.appendChild(h1)
+
+    const p = document.createElement('p')
+    const anotherText = document.createTextNode("Lorem ipsum")
+    p.appendChild(anotherText)
+    p.style.backgroundColor = "green"
+    p.style.borderRadius = "12px"
+    p.style.padding = "10px"
+    p.style.textAlign = "center"
+
+    document.body.appendChild(p)
 </script>
 </html>
