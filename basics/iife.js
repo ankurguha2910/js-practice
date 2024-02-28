@@ -6,7 +6,7 @@
     //named IIFE
     console.log('Connected');
 })();
-//there should be an ending ; after the end of an IIFE
+//there must be an ending ; after the end of an IIFE or between two IIFE ***
 console.log('-----------------------------------');
 
 //using arrow function, passing a parameter to the function
